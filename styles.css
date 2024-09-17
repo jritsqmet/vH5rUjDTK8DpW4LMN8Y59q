@@ -1,0 +1,83 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+.treasure-box {
+    position: relative;
+    display: inline-block;
+    animation: openTreasure 2s ease-in-out forwards;
+}
+
+.treasure-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 223, 75, 0.2) 50%, rgba(255, 223, 75, 0) 100%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    display: inline-block;
+}
+
+.treasure-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.secret-code {
+    opacity: 0;
+    font-size: 20px;
+    margin-top: 20px;
+    color: gold;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes openTreasure {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.reveal-message {
+    opacity: 1;
+}
+
+.reveal-background {
+    opacity: 1;
+}
